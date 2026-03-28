@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Menú de Panadería | Productos Artesanales</title>
+    <title>Menú de Panadería | Recetas Artesanales</title>
     <!-- Fuente profesional -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
             margin: 0 auto;
         }
 
-        /* Encabezado elegante */
+        /* Encabezado amigable y profesional */
         .header {
             text-align: center;
             margin-bottom: 3.5rem;
@@ -41,7 +41,6 @@
             color: #4b2e1a;
             letter-spacing: -0.02em;
             margin-bottom: 0.75rem;
-            display: inline-block;
             background: linear-gradient(135deg, #5a3a24, #8b5a2b);
             background-clip: text;
             -webkit-background-clip: text;
@@ -52,8 +51,9 @@
             font-size: 1.15rem;
             color: #7a5a44;
             font-weight: 400;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
+            line-height: 1.5;
         }
 
         .header::after {
@@ -74,7 +74,7 @@
             margin-bottom: 3rem;
         }
 
-        /* Tarjeta profesional con imagen real */
+        /* Tarjeta profesional */
         .product-card {
             background: #ffffff;
             border-radius: 1.5rem;
@@ -113,7 +113,7 @@
             transform: scale(1.05);
         }
 
-        /* Overlay sutil con gradiente */
+        /* Overlay sutil */
         .image-overlay {
             position: absolute;
             bottom: 0;
@@ -129,57 +129,33 @@
             opacity: 1;
         }
 
-        /* Contenido de la tarjeta */
+        /* Contenido */
         .card-content {
             padding: 1.5rem;
             background: white;
         }
 
         .product-name {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #2c1a0e;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             letter-spacing: -0.3px;
-        }
-
-        .product-description {
-            font-size: 0.9rem;
-            color: #8b7355;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .product-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .tag {
-            font-size: 0.7rem;
-            background: #f8efe4;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            color: #b67b3e;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            text-align: center;
         }
 
         .card-footer {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding-top: 1rem;
+            justify-content: center;
+            padding-top: 0.75rem;
             border-top: 1px solid #f0e5d8;
         }
 
         .view-link {
             color: #b67b3e;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -199,16 +175,7 @@
             transform: translateX(4px);
         }
 
-        .price-badge {
-            font-size: 0.8rem;
-            color: #a06e3c;
-            background: #fef3e8;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-
-        /* Footer principal */
+        /* Footer */
         .footer-note {
             text-align: center;
             padding: 2rem 0 0;
@@ -236,6 +203,10 @@
             .header h1 {
                 font-size: 2.2rem;
             }
+            .header p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
             .products-grid {
                 gap: 1.5rem;
             }
@@ -243,7 +214,7 @@
                 height: 220px;
             }
             .product-name {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
         }
 
@@ -257,28 +228,21 @@
 <body>
 <div class="menu-container">
     <div class="header">
-        <h1>🍞 Panadería Artesanal</h1>
-        <p>Descubre nuestra selección de productos elaborados con tradición y los mejores ingredientes</p>
+        <h1>🥖 Menú de Panadería Artesanal</h1>
+        <p>Selecciona cualquier producto y accede a su receta profesional, costos de producción y proceso de elaboración. Todo pensado para panaderos y emprendedores.</p>
     </div>
 
     <div class="products-grid">
-        <!-- Pan Campesino - IMAGEN PERSONALIZADA -->
+        <!-- Pan Campesino -->
         <a href="https://loep1039.github.io/Pan_Campesino/" class="product-card" target="_blank" rel="noopener noreferrer">
             <div class="image-container">
-                <img class="product-image" src="https://raw.githubusercontent.com/loep1039/Imagenes/main/pan-campesino.webp" alt="Pan Campesino artesanal - Receta tradicional">
+                <img class="product-image" src="https://raw.githubusercontent.com/loep1039/Imagenes/main/pan-campesino.webp" alt="Pan Campesino artesanal">
                 <div class="image-overlay"></div>
             </div>
             <div class="card-content">
                 <h3 class="product-name">Pan Campesino</h3>
-                <p class="product-description">Pan rústico de masa madre, corteza crujiente y miga esponjosa con un sabor auténtico y tradicional</p>
-                <div class="product-tags">
-                    <span class="tag">Masa madre</span>
-                    <span class="tag">Artesanal</span>
-                    <span class="tag">Horno de piedra</span>
-                </div>
                 <div class="card-footer">
-                    <span class="view-link">Ver ficha técnica <i>→</i></span>
-                    <span class="price-badge">Desde $0.48</span>
+                    <span class="view-link">Ver receta completa <i>→</i></span>
                 </div>
             </div>
         </a>
@@ -286,20 +250,13 @@
         <!-- Pan Francés -->
         <a href="https://loep1039.github.io/Pan_Frances/" class="product-card" target="_blank" rel="noopener noreferrer">
             <div class="image-container">
-                <img class="product-image" src="https://images.pexels.com/photos/263164/pexels-photo-263164.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pan Francés baguette tradicional crujiente">
+                <img class="product-image" src="https://raw.githubusercontent.com/loep1039/Imagenes/main/pan-frances.webp" alt="Pan Francés tradicional">
                 <div class="image-overlay"></div>
             </div>
             <div class="card-content">
                 <h3 class="product-name">Pan Francés</h3>
-                <p class="product-description">Crujiente por fuera, suave por dentro. El clásico baguette con la receta tradicional francesa</p>
-                <div class="product-tags">
-                    <span class="tag">Crujiente</span>
-                    <span class="tag">Tradicional</span>
-                    <span class="tag">Dorado perfecto</span>
-                </div>
                 <div class="card-footer">
-                    <span class="view-link">Ver ficha técnica <i>→</i></span>
-                    <span class="price-badge">Desde $0.10</span>
+                    <span class="view-link">Ver receta completa <i>→</i></span>
                 </div>
             </div>
         </a>
@@ -307,41 +264,27 @@
         <!-- Pan Canilla -->
         <a href="https://loep1039.github.io/Pan_Canilla/" class="product-card" target="_blank" rel="noopener noreferrer">
             <div class="image-container">
-                <img class="product-image" src="https://images.pexels.com/photos/1049627/pexels-photo-1049627.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pan Canilla artesanal alargado">
+                <img class="product-image" src="https://raw.githubusercontent.com/loep1039/Imagenes/main/pan-canilla.jpg" alt="Pan Canilla artesanal">
                 <div class="image-overlay"></div>
             </div>
             <div class="card-content">
                 <h3 class="product-name">Pan Canilla</h3>
-                <p class="product-description">Pan alargado de textura esponjosa, perfecto para acompañar comidas o disfrutar solo en cualquier momento</p>
-                <div class="product-tags">
-                    <span class="tag">Forma alargada</span>
-                    <span class="tag">Esponjoso</span>
-                    <span class="tag">Versátil</span>
-                </div>
                 <div class="card-footer">
-                    <span class="view-link">Ver ficha técnica <i>→</i></span>
-                    <span class="price-badge">Consultar precio</span>
+                    <span class="view-link">Ver receta completa <i>→</i></span>
                 </div>
             </div>
         </a>
 
-        <!-- Pan Pinita -->
+        <!-- Pan Piñita -->
         <a href="https://loep1039.github.io/Pan_Pinita/" class="product-card" target="_blank" rel="noopener noreferrer">
             <div class="image-container">
-                <img class="product-image" src="https://images.pexels.com/photos/6275161/pexels-photo-6275161.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pan Pinita dulce tradicional">
+                <img class="product-image" src="https://raw.githubusercontent.com/loep1039/Imagenes/main/pan-pi%C3%B1ita.jpg" alt="Pan Piñita dulce tradicional">
                 <div class="image-overlay"></div>
             </div>
             <div class="card-content">
-                <h3 class="product-name">Pan Pinita</h3>
-                <p class="product-description">Pan dulce tradicional, suave y ligeramente azucarado, ideal para acompañar el café de las tardes</p>
-                <div class="product-tags">
-                    <span class="tag">Dulce típico</span>
-                    <span class="tag">Perfecto con café</span>
-                    <span class="tag">Tradicional</span>
-                </div>
+                <h3 class="product-name">Pan Piñita</h3>
                 <div class="card-footer">
-                    <span class="view-link">Ver ficha técnica <i>→</i></span>
-                    <span class="price-badge">Consultar precio</span>
+                    <span class="view-link">Ver receta completa <i>→</i></span>
                 </div>
             </div>
         </a>
@@ -349,20 +292,13 @@
         <!-- Pan Hamburguesa -->
         <a href="https://loep1039.github.io/Pan_Hamburguesa/" class="product-card" target="_blank" rel="noopener noreferrer">
             <div class="image-container">
-                <img class="product-image" src="https://images.pexels.com/photos/1639556/pexels-photo-1639556.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pan de Hamburguesa estilo brioche">
+                <img class="product-image" src="https://raw.githubusercontent.com/loep1039/Imagenes/main/pan-hamburguesa.jpg" alt="Pan de Hamburguesa estilo brioche">
                 <div class="image-overlay"></div>
             </div>
             <div class="card-content">
                 <h3 class="product-name">Pan Hamburguesa</h3>
-                <p class="product-description">Pan estilo brioche, suave y ligeramente dulce, con semillas de sésamo, perfecto para las mejores hamburguesas</p>
-                <div class="product-tags">
-                    <span class="tag">Brioche</span>
-                    <span class="tag">Aterciopelado</span>
-                    <span class="tag">Premium</span>
-                </div>
                 <div class="card-footer">
-                    <span class="view-link">Ver ficha técnica <i>→</i></span>
-                    <span class="price-badge">Consultar precio</span>
+                    <span class="view-link">Ver receta completa <i>→</i></span>
                 </div>
             </div>
         </a>
@@ -370,30 +306,22 @@
         <!-- Torta De Naranja -->
         <a href="https://loep1039.github.io/Torta_De_Naranja/" class="product-card" target="_blank" rel="noopener noreferrer">
             <div class="image-container">
-                <img class="product-image" src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Torta de Naranja casera húmeda">
+                <img class="product-image" src="https://raw.githubusercontent.com/loep1039/Imagenes/main/torta_naranja.webp" alt="Torta de Naranja casera">
                 <div class="image-overlay"></div>
             </div>
             <div class="card-content">
                 <h3 class="product-name">Torta de Naranja</h3>
-                <p class="product-description">Deliciosa torta húmeda con jugo natural de naranja, aroma cítrico y textura inigualable que conquista paladares</p>
-                <div class="product-tags">
-                    <span class="tag">Húmeda</span>
-                    <span class="tag">Cítrica natural</span>
-                    <span class="tag">Receta casera</span>
-                </div>
                 <div class="card-footer">
-                    <span class="view-link">Ver ficha técnica <i>→</i></span>
-                    <span class="price-badge">Desde $2.93</span>
+                    <span class="view-link">Ver receta completa <i>→</i></span>
                 </div>
             </div>
         </a>
     </div>
 
     <div class="footer-note">
-        <span>📊 Sistema de gestión actualizado</span>
-        <span>👨‍🍳 Fernando Araujo</span>
-        <span>✨ Productos 100% artesanales</span>
-        <span>🏆 Calidad y tradición</span>
+        <span>📊 Sistema de gestión - Fernando Araujo</span>
+        <span>👨‍🍳 Recetas profesionales</span>
+        <span>✨ Elaboración artesanal</span>
     </div>
 </div>
 </body>
