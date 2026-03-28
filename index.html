@@ -3,57 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión - Fernando Araujo</title>
+    <title>Gestión Fernando Araujo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --fondo: #f4f7f6;
-            --texto: #2d3436;
-            --blanco: #ffffff;
-            --gris-claro: #edf2f7;
-            /* Colores de identidad */
-            --color-campesino: #00965e;
-            --color-frances: #2c3e50;
-            --color-pinita: #f39c12;
-            --color-torta: #8e44ad;
-            --color-canilla: #e74c3c;
-            --color-hamburguesa: #96715f;
-            --color-insumos: #34495e;
+            --fondo: #f4f7f6; --texto: #2d3436; --blanco: #ffffff;
+            --color-campesino: #00965e; --color-frances: #2c3e50;
+            --color-pinita: #f39c12; --color-torta: #8e44ad;
+            --color-canilla: #e74c3c; --color-hamburguesa: #96715f;
         }
-
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: #e2e8f0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            padding: 15px;
-        }
-
-        .app-container { width: 100%; max-width: 450px; background: var(--blanco); border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); min-height: 90vh; position: relative; }
-
-        /* VISTAS */
-        .view { display: none; padding: 20px; animation: fadeIn 0.3s ease; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #e2e8f0; margin: 0; display: flex; justify-content: center; padding: 15px; }
+        .app-container { width: 100%; max-width: 450px; background: var(--blanco); border-radius: 30px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); min-height: 90vh; }
+        
+        /* NAVEGACIÓN DE VISTAS */
+        .view { display: none; padding: 20px; }
         .view.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* HEADER */
         header { text-align: center; padding: 20px 0; }
-        header p { margin: 0; font-size: 0.65rem; letter-spacing: 2px; color: #636e72; text-transform: uppercase; font-weight: bold; }
-        header h1 { margin: 5px 0; font-size: 1.3rem; color: var(--texto); font-weight: 800; }
-
-        /* MENÚ PRINCIPAL */
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
-        .menu-card { background: var(--blanco); border-radius: 20px; padding: 20px; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(0,0,0,0.05); cursor: pointer; transition: 0.2s; }
+        header h1 { margin: 5px 0; font-size: 1.4rem; color: var(--texto); font-weight: 800; }
+        
+        /* GRILLA DEL MENÚ */
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .menu-card { background: white; border-radius: 20px; padding: 20px; text-align: center; border: 1px solid #edf2f7; cursor: pointer; transition: 0.2s; }
         .menu-card:active { transform: scale(0.95); background: #f8fafc; }
-        .icon-circle { width: 50px; height: 50px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1.2rem; color: white; }
-        .menu-card span { font-size: 0.75rem; font-weight: 700; color: var(--texto); text-transform: uppercase; }
+        .icon-circle { width: 50px; height: 50px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: white; font-size: 1.2rem; }
+        .menu-card span { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--texto); }
 
         /* CALCULADORA */
-        .recipe-header { color: white; padding: 20px; border-radius: 20px; text-align: center; position: relative; margin-bottom: 20px; }
-        .btn-back { position: absolute; left: 20px; top: 25px; color: white; cursor: pointer; font-size: 1.2rem; }
-        
+        .recipe-header { color: white; padding: 25px; border-radius: 20px; text-align: center; position: relative; margin-bottom: 20px; }
+        .btn-back { position: absolute; left: 20px; top: 30px; cursor: pointer; font-size: 1.2rem; }
         .summary-box { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
-        .stat-card { background: var(--gris-claro); padding: 15px; border-radius: 15px; text-align: center; }
-        .stat-card.main { grid-column: 1 / -1; background: #fffbeb; border: 1px solid #fef3c7; }
-        .label-mini { font-size: 0.6rem; color: #718096; text-transform: uppercase; font-weight: bold; display
+        .stat-card { background: #f8fafc; padding: 15px; border-radius: 15px; text-align: center; border: 1px solid #edf2f7; }
+        .stat-card.main { grid-column: 1 / -1; background: #fffbeb; }
+        .qty-input { width: 80px; border: 2px solid #cbd5e0; border-radius: 10px; font-size: 1.2rem; font-weight: bold; text-align: center; padding: 5px; }
+        
+        .ing-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #edf2f7; font-size: 0.85rem; }
+        .btn-copy { width: 100%; padding: 15px; border-radius: 15px; border: none; background: #2d3436; color: white; font-weight: bold; margin-top: 20px; cursor: pointer; }
+        
+        /* COLORES ICONOS */
+        .bg-campesino { background: var(--color-campesino); }
+        .bg-frances { background: var(--color-frances); }
+        .bg-pinita { background: var(--color-pinita); }
+        .bg-torta { background: var(--color-torta); }
+        .bg-canilla { background: var(--color-canilla); }
+        .bg-hamburguesa { background: var(--color-hamburguesa); }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <div id="view-menu" class="view active">
+        <header><p style="font-size:0.7rem; font-weight:bold; color:#a0aec0; letter-spacing:1px;">SISTEMA DE GESTIÓN</p><h1>FERNANDO ARAUJO</h1></header>
+        <div class="menu-grid" id="menu-items"></div>
+        <a href="https://docs.google.com/spreadsheets/d/1FngFQjaqSymrWqXvLNKW2h0iz_sWONCUVpvGDPZF3DM/edit" target="_blank" style="display:flex; align-items:center; gap:10px; text-decoration:none; background:#f1f5f9; padding:15px; border-radius:15px; margin-top:20px; color:#475569; font-size:0.8rem; font-weight:bold; border:1px solid #cbd5e0;">
+            <i class="fas fa-file-invoice-dollar"></i> Precios en Google Sheets
+        </a>
+    </div>
+
+    <div id="view-calc" class="view">
+        <div id="calc-header" class="recipe-header">
+            <i class="fas fa-chevron-left btn-back" onclick="showMenu()"></i>
+            <h1 id="calc-title" style="margin:0; font-size:1.2rem;">PRODUCTO</h1>
+        </div>
+        <div class="summary-box">
+            <div class="stat-card main"><span style="font-size:0.6rem; font-weight:bold; color:#718096; display:block;">CANTIDAD DE UNIDADES</span>
+                <input type="number" id="inputQty" class="qty-input" value="1" oninput="calculate()">
+            </div>
+            <div class="stat-card"><span style="font-size:0.6rem; font-weight:bold; color:#718096; display:block;">COSTO TOTAL</span><span id="resCosto" style="font-weight:800;">$ 0.00</span></div>
+            <div class="stat-card"><span style="font-size:0.6rem; font-weight:bold; color:#718096; display:block;">MASA TOTAL</span><span id="resMasa" style="font-weight:800;">0 g</span></div>
+        </div>
+        <div id="ingredientesList"></div>
+        <button class="btn-copy" onclick="copyWA()"><i class="fas fa-copy"></i> COPIAR WHATSAPP</button>
+    </div>
+</div>
+
+<script>
+    const SHEET_URL = "https://script.google.com/macros/s/AKfycbyK0o_LRZg2b75mrPzU63l6bPjFac01LWs3DA5tFVXJ3yR97DbBek1zEVD7JJySiDas/exec";
+    let preciosBD = [];
+    let currentKey = '';
+
+    const RECETAS = {
+        campesino: { n: "Pan Campesino", h: 300, c: "var(--color-campesino)", i: "leaf", items: [{n:"Harina", p:100},{n:"Agua", p:60},{n:"Levadura", p:2},{n:"Sal", p:2},{n:"Margarina", p:2}]},
+        frances: { n: "Pan Francés", h: 31.3, c: "var(--color-frances)", i: "bread-slice", items: [{n:"Harina", p:100},{n:"Agua", p:58},{n:"Levadura", p:1.5},{n:"Sal", p:2},{n:"Azúcar", p:1.5},{n:"Margarina", p:1.5}]},
+        pinita: { n: "Pan Piñita", h: 30.6, c: "var(--color-pinita)", i: "cookie", items: [{n:"Harina", p:100},{n:"Agua", p:34},{n:"Levadura", p:2.6},{n:"Sal", p:0.7},{n:"Azúcar", p:24.5},{n:"Margarina", p:9.8},{n:"Huevos", p:6.5},{n:"Vainilla", p:0.7}]},
+        torta: { n: "Torta Naranja", h: 500, c: "var(--color-torta)", i: "birthday-cake", items: [{n:"Harina", p:100},{n:"Azúcar", p:100},{n:"Margarina", p:100},{n:"Huevos", p:60},{n:"Jugo Naranja", p:80},{n:"Polvo Hornear", p:4}]},
+        canilla: { n: "Pan Canilla", h: 125, c: "var(--color-canilla)", i: "arrows-alt-v", items: [{n:"Harina", p:100},{n:"Agua", p:55},{n:"Levadura", p:1.6},{n:"Sal", p:1.6},{n:"Azúcar", p:4},{n:"Margarina", p:4}]},
+        hamburguesa: { n: "Hamburguesa", h: 61.0, c: "var(--color-hamburguesa)", i: "hamburger", items: [{n:"Harina", p:100},{n:"Agua", p:39},{n:"Levadura", p:2},{n:"Sal", p:1.3},{n:"Azúcar", p:11.7},{n:"Margarina", p:13.3},{n:"Huevos", p:6.7},{n:"Vainilla", p:0.7}]}
+    };
+
+    function initMenu() {
+        const grid = document.getElementById('menu-items');
+        Object.keys(RECETAS).forEach(key => {
+            const r = RECETAS[key];
+            grid.innerHTML += `<div class="menu-card" onclick="openCalc('${key}')"><div class="icon-circle bg-${key}"><i class="fas fa-${r.i}"></i></div><span>${r.n}</span></div>`;
+        });
+    }
+
+    async function loadPrecios() {
+        try { const r = await fetch(SHEET_URL); preciosBD = await r.json(); } catch(e) { console.log("Usando precios base 0"); }
+    }
+
+    function openCalc(key) {
+        currentKey = key; const r = RECETAS[key];
+        document.getElementById('calc-title').innerText = r.n.toUpperCase();
+        document.getElementById('calc-header').style.background = r.c;
+        document.getElementById('view-menu').classList.remove('active');
+        document.getElementById('view-calc').classList.add('active');
+        document.getElementById('inputQty').value = 1; calculate();
+    }
+
+    function showMenu() {
+        document.getElementById('view-calc').classList.remove('active');
+        document.getElementById('view-menu').classList.add('active');
+    }
+
+    function calculate() {
+        const r = RECETAS[currentKey]; const qty = parseFloat(document.getElementById('inputQty').value) || 0;
+        let mT = 0, cT = 0; const list = document.getElementById('ingredientesList');
+        list.innerHTML = '';
+        r.items.forEach(ing => {
+            const g = (r.h * qty) * (ing.p / 100); mT += g;
+            const pData = preciosBD.find(p => ing.n.toLowerCase().includes(p.nombre.toLowerCase().trim()));
+            const pKg = pData ? pData.precioKg : 0;
+            const cost = (g / (ing.n === "Huevos" ? 1500 : 1000)) * pKg; cT += cost;
+            list.innerHTML += `<div class="ing-item"><span style="font-weight:600">${ing.n} (${ing.p}%)</span><span style="font-weight:700">${g.toFixed(1)}g <small style="display:block; font-size:0.6rem; color:#a0aec0; text-align:right">$ ${cost.toFixed(2)}</small></span></div>`;
+        });
+        document.getElementById('resMasa').innerText = mT.toFixed(1) + " g";
+        document.getElementById('resCosto').innerText = "$ " + cT.toFixed(2);
+    }
+
+    function copyWA() {
+        const r = RECETAS[currentKey]; const qty = document.getElementById('inputQty').value;
+        let txt = `*${r.n.toUpperCase()}* - ${document.getElementById('resCosto').innerText}\nCant: ${qty} und.\n---\n`;
+        r.items.forEach(ing => { txt += `${ing.n}: ${((r.h * qty) * (ing.p / 100)).toFixed(1)}g\n`; });
+        const el = document.createElement('textarea'); el.value = txt; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el);
+        alert("¡Copiado!");
+    }
+
+    window.onload = () => { initMenu(); loadPrecios(); };
+</script>
+</body>
+</html>
