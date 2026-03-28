@@ -7,16 +7,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --fondo: #f0f2f5;
-            --texto: #1a202c;
+            --fondo: #f4f7f6;
+            --texto: #2d3436;
             --blanco: #ffffff;
             /* Colores de identidad por producto */
-            --color-campesino: #2ecc71;  /* Verde */
-            --color-frances: #34495e;    /* Azul Oscuro */
+            --color-campesino: #00965e;  /* Verde */
+            --color-frances: #2c3e50;    /* Azul Oscuro */
             --color-pinita: #f39c12;     /* Naranja */
-            --color-torta: #9b59b6;      /* Púrpura */
+            --color-torta: #8e44ad;      /* Púrpura */
             --color-canilla: #e74c3c;    /* Rojo */
-            --color-hamburguesa: #8d6e63; /* Café */
+            --color-hamburguesa: #96715f; /* Café */
+            --color-insumos: #34495e;    /* Gris Azulado para ajustes */
         }
 
         body {
@@ -42,14 +43,14 @@
             margin: 0; 
             font-size: 0.7rem; 
             letter-spacing: 2px; 
-            color: #718096;
+            color: #636e72;
             text-transform: uppercase;
             font-weight: bold;
         }
 
         header h1 { 
             margin: 5px 0; 
-            font-size: 1.5rem; 
+            font-size: 1.4rem; 
             color: var(--texto);
             font-weight: 800;
         }
@@ -58,7 +59,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
-            padding-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .menu-card {
@@ -72,34 +73,59 @@
             justify-content: center;
             transition: transform 0.2s, box-shadow 0.2s;
             border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-
-        .menu-card:active {
-            transform: scale(0.95);
         }
 
         .icon-circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 15px;
+            width: 55px;
+            height: 55px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 12px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: white;
         }
 
         .menu-card span {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--texto);
             text-align: center;
-            text-transform: uppercase;
         }
 
-        /* Colores específicos de iconos */
+        /* Botón de Insumos Especial */
+        .full-width-btn {
+            background: var(--blanco);
+            border-radius: 20px;
+            padding: 18px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 2px solid #dfe6e9;
+            transition: all 0.2s;
+        }
+
+        .full-width-btn:active { transform: scale(0.98); }
+
+        .full-width-btn i {
+            font-size: 1.2rem;
+            color: var(--color-insumos);
+        }
+
+        .full-width-btn div b {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--texto);
+        }
+
+        .full-width-btn div span {
+            font-size: 0.7rem;
+            color: #b2bec3;
+        }
+
+        /* Colores de los iconos */
         .bg-campesino { background-color: var(--color-campesino); }
         .bg-frances { background-color: var(--color-frances); }
         .bg-pinita { background-color: var(--color-pinita); }
@@ -109,9 +135,9 @@
 
         .footer-info {
             text-align: center;
-            color: #a0aec0;
-            font-size: 0.65rem;
-            margin-top: 20px;
+            color: #b2bec3;
+            font-size: 0.7rem;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -128,32 +154,36 @@
             <div class="icon-circle bg-campesino"><i class="fas fa-leaf"></i></div>
             <span>Campesino</span>
         </a>
-
         <a href="pan_frances.html" class="menu-card">
             <div class="icon-circle bg-frances"><i class="fas fa-bread-slice"></i></div>
             <span>Francés</span>
         </a>
-
         <a href="pan_pinita.html" class="menu-card">
-            <div class="icon-circle bg-pinita"><i class="fas fa-dots-vertical"></i></div>
+            <div class="icon-circle bg-pinita"><i class="fas fa-cookie"></i></div>
             <span>Piñita</span>
         </a>
-
         <a href="torta_naranja.html" class="menu-card">
             <div class="icon-circle bg-torta"><i class="fas fa-birthday-cake"></i></div>
             <span>Torta Naranja</span>
         </a>
-
         <a href="pan_canilla.html" class="menu-card">
-            <div class="icon-circle bg-canilla"><i class="fas fa-long-arrow-alt-up"></i></div>
+            <div class="icon-circle bg-canilla"><i class="fas fa-arrows-alt-v"></i></div>
             <span>Canilla</span>
         </a>
-
         <a href="pan_hamburguesa.html" class="menu-card">
             <div class="icon-circle bg-hamburguesa"><i class="fas fa-hamburger"></i></div>
             <span>Hamburguesa</span>
         </a>
     </nav>
+
+    <a href="https://docs.google.com/spreadsheets/d/1FngFQjaqSymrWqXvLNKW2h0iz_sWONCUVpvGDPZF3DM/edit" target="_blank" class="full-width-btn">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <div>
+            <b>Precios de Insumos</b>
+            <span>Actualizar costos en Google Sheets</span>
+        </div>
+        <i class="fas fa-external-link-alt" style="margin-left: auto; font-size: 0.8rem; opacity: 0.3;"></i>
+    </a>
 
     <div class="footer-info">
         &copy; 2026 Fernando Araujo · Panadería Artesanal
