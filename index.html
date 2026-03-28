@@ -2,146 +2,283 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Control - Fernando Araujo</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Menú de Panadería | Productos Artesanales</title>
+    <!-- Fuente profesional y moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (iconos profesionales) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        :root {
-            --fondo: #f4f7f6;
-            --texto: #2d3436;
-            --blanco: #ffffff;
-            /* Colores basados en tus capturas */
-            --color-campesino: #00965e;
-            --color-frances: #2c3e50;
-            --color-canilla: #e74c3c;
-            --color-pinita: #f39c12;
-            --color-hamburguesa: #96715f;
-            --color-torta: #8e44ad;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--fondo);
-            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #fef7e8;  /* tono cálido panadería */
+            background-image: radial-gradient(circle at 10% 20%, rgba(255,235,205,0.4) 0%, rgba(249,226,175,0.2) 90%);
+            min-height: 100vh;
             display: flex;
+            align-items: center;
             justify-content: center;
-            padding: 15px;
+            padding: 2rem 1.5rem;
         }
 
-        .app-container {
+        /* Contenedor principal */
+        .menu-container {
+            max-width: 1300px;
             width: 100%;
-            max-width: 450px;
+            margin: 0 auto;
         }
 
-        header {
+        /* Encabezado elegante */
+        .header {
             text-align: center;
-            padding: 25px 0;
+            margin-bottom: 3rem;
         }
 
-        header h1 { 
-            margin: 0; 
-            font-size: 1.4rem; 
-            color: var(--texto);
-            font-weight: 800;
-            text-transform: uppercase;
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #4b2e1a;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #5a3a24, #8b5a2b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
         }
 
-        .menu-grid {
+        .header p {
+            font-size: 1.1rem;
+            color: #7a5a44;
+            font-weight: 400;
+            border-bottom: 2px solid #e7cfaa;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Grid de productos profesional */
+        .products-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        .menu-card {
-            background: var(--blanco);
-            border-radius: 20px;
-            padding: 20px;
+        /* Tarjeta individual */
+        .product-card {
+            background: #ffffff;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
             text-decoration: none;
+            color: inherit;
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: 0.2s;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            padding: 2rem 1.5rem 1.8rem;
+            border: 1px solid #f7e5cf;
+            backdrop-filter: blur(0px);
         }
 
-        .menu-card:active {
-            transform: scale(0.95);
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.2);
+            border-color: #e1c394;
         }
 
-        .icon-circle {
-            width: 55px;
-            height: 55px;
-            border-radius: 18px;
+        /* Icono circular profesional */
+        .icon-wrapper {
+            background: #fef1e0;
+            width: 110px;
+            height: 110px;
+            border-radius: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 12px;
-            font-size: 1.4rem;
-            color: white;
+            margin-bottom: 1.5rem;
+            transition: background 0.2s;
         }
 
-        .menu-card span {
+        .product-card:hover .icon-wrapper {
+            background: #f7e1c1;
+        }
+
+        .icon-wrapper i {
+            font-size: 3.8rem;
+            color: #b56a2c;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover .icon-wrapper i {
+            transform: scale(1.05);
+            color: #9b541f;
+        }
+
+        /* Título del producto */
+        .product-name {
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #3e2a1f;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        /* Pequeño detalle tipo panadería */
+        .product-badge {
             font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--texto);
-            text-transform: uppercase;
+            background: #f3e3cf;
+            padding: 0.25rem 0.9rem;
+            border-radius: 40px;
+            color: #a1622b;
+            font-weight: 500;
+            margin-top: 0.6rem;
+            letter-spacing: 0.3px;
         }
 
-        /* Asignación de colores a iconos */
-        .bg-campesino { background: var(--color-campesino); }
-        .bg-frances { background: var(--color-frances); }
-        .bg-canilla { background: var(--color-canilla); }
-        .bg-pinita { background: var(--color-pinita); }
-        .bg-hamburguesa { background: var(--color-hamburguesa); }
-        .bg-torta { background: var(--color-torta); }
+        /* Efecto sutil enlace */
+        .card-footer {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #b6854b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
 
+        .product-card:hover .card-footer {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .products-grid {
+                gap: 1.2rem;
+            }
+            .product-card {
+                padding: 1.5rem 1rem;
+            }
+            .icon-wrapper {
+                width: 85px;
+                height: 85px;
+            }
+            .icon-wrapper i {
+                font-size: 2.8rem;
+            }
+            .product-name {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Footer sutil */
+        .footer-note {
+            text-align: center;
+            margin-top: 3.5rem;
+            font-size: 0.85rem;
+            color: #b48c62;
+            border-top: 1px solid #eedbbc;
+            padding-top: 2rem;
+            font-weight: 400;
+        }
     </style>
 </head>
 <body>
+<div class="menu-container">
+    <div class="header">
+        <h1>🍞 Panadería Artesanal</h1>
+        <p>Selecciona una especialidad para ver detalles y gestión</p>
+    </div>
 
-<div class="app-container">
-    <header>
-        <p style="margin:0; font-size:0.6rem; font-weight:bold; color:#a0aec0; letter-spacing:1px;">GESTIÓN PANADERÍA</p>
-        <h1>FERNANDO ARAUJO</h1>
-    </header>
-
-    <div class="menu-grid">
-        <a href="https://loep1039.github.io/Pan_Campesino/" class="menu-card">
-            <div class="icon-circle bg-campesino"><i class="fas fa-leaf"></i></div>
-            <span>Campesino</span>
+    <div class="products-grid">
+        <!-- Pan Campesino -->
+        <a href="https://loep1039.github.io/Pan_Campesino/" class="product-card" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper">
+                <i class="fas fa-bread-slice"></i>
+            </div>
+            <div class="product-name">Pan Campesino</div>
+            <div class="product-badge">Rústico • Masa madre</div>
+            <div class="card-footer">
+                <span>Ver ficha técnica →</span>
+            </div>
         </a>
 
-        <a href="https://loep1039.github.io/Pan_Frances/" class="menu-card">
-            <div class="icon-circle bg-frances"><i class="fas fa-bread-slice"></i></div>
-            <span>Francés</span>
+        <!-- Pan Francés -->
+        <a href="https://loep1039.github.io/Pan_Frances/" class="product-card" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper">
+                <i class="fas fa-baguette"></i>
+            </div>
+            <div class="product-name">Pan Francés</div>
+            <div class="product-badge">Crujiente • Tradicional</div>
+            <div class="card-footer">
+                <span>Ver ficha técnica →</span>
+            </div>
         </a>
 
-        <a href="https://loep1039.github.io/Pan_Canilla/" class="menu-card">
-            <div class="icon-circle bg-canilla"><i class="fas fa-arrows-alt-v"></i></div>
-            <span>Canilla</span>
+        <!-- Pan Canilla -->
+        <a href="https://loep1039.github.io/Pan_Canilla/" class="product-card" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper">
+                <i class="fas fa-bread-loaf"></i>
+            </div>
+            <div class="product-name">Pan Canilla</div>
+            <div class="product-badge">Alargado • Esponjoso</div>
+            <div class="card-footer">
+                <span>Ver ficha técnica →</span>
+            </div>
         </a>
 
-        <a href="https://loep1039.github.io/Pan_Pinita/" class="menu-card">
-            <div class="icon-circle bg-pinita"><i class="fas fa-cookie"></i></div>
-            <span>Piñita</span>
+        <!-- Pan Pinita -->
+        <a href="https://loep1039.github.io/Pan_Pinita/" class="product-card" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <div class="product-name">Pan Pinita</div>
+            <div class="product-badge">Suave • Dulce típico</div>
+            <div class="card-footer">
+                <span>Ver ficha técnica →</span>
+            </div>
         </a>
 
-        <a href="https://loep1039.github.io/Pan_Hamburguesa/" class="menu-card">
-            <div class="icon-circle bg-hamburguesa"><i class="fas fa-hamburger"></i></div>
-            <span>Hamburguesa</span>
+        <!-- Pan Hamburguesa -->
+        <a href="https://loep1039.github.io/Pan_Hamburguesa/" class="product-card" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper">
+                <i class="fas fa-hamburger"></i>
+            </div>
+            <div class="product-name">Pan Hamburguesa</div>
+            <div class="product-badge">Brioche • Aterciopelado</div>
+            <div class="card-footer">
+                <span>Ver ficha técnica →</span>
+            </div>
         </a>
 
-        <a href="https://loep1039.github.io/Torta_De_Naranja/" class="menu-card">
-            <div class="icon-circle bg-torta"><i class="fas fa-birthday-cake"></i></div>
-            <span>Torta Naranja</span>
+        <!-- Torta De Naranja -->
+        <a href="https://loep1039.github.io/Torta_De_Naranja/" class="product-card" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper">
+                <i class="fas fa-cake-candles"></i>
+            </div>
+            <div class="product-name">Torta de Naranja</div>
+            <div class="product-badge">Húmeda • Cítrica</div>
+            <div class="card-footer">
+                <span>Ver ficha técnica →</span>
+            </div>
         </a>
     </div>
 
-    <p style="text-align:center; color:#b2bec3; font-size:0.7rem; margin-top:30px;">
-        Seleccione un producto para calcular receta
-    </p>
+    <div class="footer-note">
+        <i class="fas fa-chart-line"></i> Sistema de gestión actualizado • Fernando Araujo
+    </div>
 </div>
-
 </body>
 </html>
