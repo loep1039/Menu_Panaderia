@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Fernando Araujo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --fondo: #f0f2f5;
+            --texto: #1a202c;
+            --blanco: #ffffff;
+            /* Colores de identidad por producto */
+            --color-campesino: #2ecc71;  /* Verde */
+            --color-frances: #34495e;    /* Azul Oscuro */
+            --color-pinita: #f39c12;     /* Naranja */
+            --color-torta: #9b59b6;      /* Púrpura */
+            --color-canilla: #e74c3c;    /* Rojo */
+            --color-hamburguesa: #8d6e63; /* Café */
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--fondo);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        header p { 
+            margin: 0; 
+            font-size: 0.7rem; 
+            letter-spacing: 2px; 
+            color: #718096;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        header h1 { 
+            margin: 5px 0; 
+            font-size: 1.5rem; 
+            color: var(--texto);
+            font-weight: 800;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding-bottom: 40px;
+        }
+
+        .menu-card {
+            background: var(--blanco);
+            border-radius: 20px;
+            padding: 20px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .menu-card:active {
+            transform: scale(0.95);
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .menu-card span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--texto);
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Colores específicos de iconos */
+        .bg-campesino { background-color: var(--color-campesino); }
+        .bg-frances { background-color: var(--color-frances); }
+        .bg-pinita { background-color: var(--color-pinita); }
+        .bg-torta { background-color: var(--color-torta); }
+        .bg-canilla { background-color: var(--color-canilla); }
+        .bg-hamburguesa { background-color: var(--color-hamburguesa); }
+
+        .footer-info {
+            text-align: center;
+            color: #a0aec0;
+            font-size: 0.65rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <p>Sistema de Gestión</p>
+        <h1>FERNANDO ARAUJO</h1>
+    </header>
+
+    <nav class="menu-grid">
+        <a href="pan_campesino.html" class="menu-card">
+            <div class="icon-circle bg-campesino"><i class="fas fa-leaf"></i></div>
+            <span>Campesino</span>
+        </a>
+
+        <a href="pan_frances.html" class="menu-card">
+            <div class="icon-circle bg-frances"><i class="fas fa-bread-slice"></i></div>
+            <span>Francés</span>
+        </a>
+
+        <a href="pan_pinita.html" class="menu-card">
+            <div class="icon-circle bg-pinita"><i class="fas fa-dots-vertical"></i></div>
+            <span>Piñita</span>
+        </a>
+
+        <a href="torta_naranja.html" class="menu-card">
+            <div class="icon-circle bg-torta"><i class="fas fa-birthday-cake"></i></div>
+            <span>Torta Naranja</span>
+        </a>
+
+        <a href="pan_canilla.html" class="menu-card">
+            <div class="icon-circle bg-canilla"><i class="fas fa-long-arrow-alt-up"></i></div>
+            <span>Canilla</span>
+        </a>
+
+        <a href="pan_hamburguesa.html" class="menu-card">
+            <div class="icon-circle bg-hamburguesa"><i class="fas fa-hamburger"></i></div>
+            <span>Hamburguesa</span>
+        </a>
+    </nav>
+
+    <div class="footer-info">
+        &copy; 2026 Fernando Araujo · Panadería Artesanal
+    </div>
+</div>
+
+</body>
+</html>
