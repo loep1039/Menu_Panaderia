@@ -10,14 +10,14 @@
             --fondo: #f4f7f6;
             --texto: #2d3436;
             --blanco: #ffffff;
+            --gris-borde: #dfe6e9;
             /* Colores de identidad por producto */
-            --color-campesino: #00965e;
-            --color-frances: #2c3e50;
-            --color-pinita: #f39c12;
-            --color-torta: #8e44ad;
-            --color-canilla: #e74c3c;
-            --color-hamburguesa: #96715f;
-            --color-insumos: #34495e;
+            --color-campesino: #00965e;  /* Verde */
+            --color-frances: #2c3e50;    /* Azul Oscuro */
+            --color-canilla: #e74c3c;    /* Rojo */
+            --color-pinita: #f39c12;     /* Naranja */
+            --color-hamburguesa: #96715f; /* Café */
+            --color-torta: #8e44ad;      /* Púrpura */
         }
 
         body {
@@ -31,7 +31,7 @@
 
         .app-container {
             width: 100%;
-            max-width: 450px;
+            max-width: 450px; /* Ancho ideal para móviles */
         }
 
         header {
@@ -57,9 +57,9 @@
 
         .menu-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr; /* Dos columnas */
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .menu-card {
@@ -74,6 +74,18 @@
             transition: transform 0.2s, box-shadow 0.2s;
             border: 1px solid rgba(0,0,0,0.05);
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Borde de color sutil en la parte inferior de cada tarjeta */
+        .menu-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
         }
 
         .menu-card:active {
@@ -100,26 +112,24 @@
             text-transform: uppercase;
         }
 
-        /* Botón de Insumos */
-        .full-width-btn {
-            background: var(--blanco);
-            border-radius: 20px;
-            padding: 18px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border: 2px solid #dfe6e9;
-            transition: all 0.2s;
-        }
-
-        /* Clases de colores */
+        /* Colores y bordes específicos */
+        .card-campesino::after { background-color: var(--color-campesino); }
         .bg-campesino { background-color: var(--color-campesino); }
+
+        .card-frances::after { background-color: var(--color-frances); }
         .bg-frances { background-color: var(--color-frances); }
-        .bg-pinita { background-color: var(--color-pinita); }
-        .bg-torta { background-color: var(--color-torta); }
+
+        .card-canilla::after { background-color: var(--color-canilla); }
         .bg-canilla { background-color: var(--color-canilla); }
+
+        .card-pinita::after { background-color: var(--color-pinita); }
+        .bg-pinita { background-color: var(--color-pinita); }
+
+        .card-hamburguesa::after { background-color: var(--color-hamburguesa); }
         .bg-hamburguesa { background-color: var(--color-hamburguesa); }
+
+        .card-torta::after { background-color: var(--color-torta); }
+        .bg-torta { background-color: var(--color-torta); }
 
         .footer-info {
             text-align: center;
@@ -138,45 +148,36 @@
     </header>
 
     <nav class="menu-grid">
-        <a href="pan_campesino.html" class="menu-card">
+        <a href="https://loep1039.github.io/Pan_Campesino/" class="menu-card card-campesino" target="_blank">
             <div class="icon-circle bg-campesino"><i class="fas fa-leaf"></i></div>
             <span>Campesino</span>
         </a>
 
-        <a href="pan_frances.html" class="menu-card">
+        <a href="https://loep1039.github.io/Pan_Frances/" class="menu-card card-frances" target="_blank">
             <div class="icon-circle bg-frances"><i class="fas fa-bread-slice"></i></div>
             <span>Francés</span>
         </a>
 
-        <a href="pan_pinita.html" class="menu-card">
-            <div class="icon-circle bg-pinita"><i class="fas fa-cookie"></i></div>
-            <span>Piñita</span>
-        </a>
-
-        <a href="torta_naranja.html" class="menu-card">
-            <div class="icon-circle bg-torta"><i class="fas fa-birthday-cake"></i></div>
-            <span>Torta Naranja</span>
-        </a>
-
-        <a href="pan_canilla.html" class="menu-card">
+        <a href="https://loep1039.github.io/Pan_Canilla/" class="menu-card card-canilla" target="_blank">
             <div class="icon-circle bg-canilla"><i class="fas fa-arrows-alt-v"></i></div>
             <span>Canilla</span>
         </a>
 
-        <a href="pan_hamburguesa.html" class="menu-card">
+        <a href="https://loep1039.github.io/Pan_Pinita/" class="menu-card card-pinita" target="_blank">
+            <div class="icon-circle bg-pinita"><i class="fas fa-cookie"></i></div>
+            <span>Piñita</span>
+        </a>
+
+        <a href="https://loep1039.github.io/Pan_Hamburguesa/" class="menu-card card-hamburguesa" target="_blank">
             <div class="icon-circle bg-hamburguesa"><i class="fas fa-hamburger"></i></div>
             <span>Hamburguesa</span>
         </a>
-    </nav>
 
-    <a href="https://docs.google.com/spreadsheets/d/1FngFQjaqSymrWqXvLNKW2h0iz_sWONCUVpvGDPZF3DM/edit" target="_blank" class="full-width-btn">
-        <i class="fas fa-file-invoice-dollar" style="color: var(--color-insumos); font-size: 1.2rem;"></i>
-        <div style="flex-grow: 1;">
-            <b style="display: block; font-size: 0.9rem; color: var(--texto);">Precios de Insumos</b>
-            <span style="font-size: 0.7rem; color: #b2bec3;">Ver en Google Sheets</span>
-        </div>
-        <i class="fas fa-external-link-alt" style="font-size: 0.8rem; color: #dfe6e9;"></i>
-    </a>
+        <a href="https://loep1039.github.io/Torta_De_Naranja/" class="menu-card card-torta" target="_blank">
+            <div class="icon-circle bg-torta"><i class="fas fa-birthday-cake"></i></div>
+            <span>Torta Naranja</span>
+        </a>
+    </nav>
 
     <div class="footer-info">
         &copy; 2026 Fernando Araujo · Panadería Artesanal
