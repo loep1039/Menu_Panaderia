@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (iconos profesionales) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -19,7 +17,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #fef7e8;  /* tono cálido panadería */
+            background: #fef7e8;
             background-image: radial-gradient(circle at 10% 20%, rgba(255,235,205,0.4) 0%, rgba(249,226,175,0.2) 90%);
             min-height: 100vh;
             display: flex;
@@ -28,14 +26,12 @@
             padding: 2rem 1.5rem;
         }
 
-        /* Contenedor principal */
         .menu-container {
             max-width: 1300px;
             width: 100%;
             margin: 0 auto;
         }
 
-        /* Encabezado elegante */
         .header {
             text-align: center;
             margin-bottom: 3rem;
@@ -62,14 +58,12 @@
             padding-bottom: 0.5rem;
         }
 
-        /* Grid de productos profesional */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
         }
 
-        /* Tarjeta individual */
         .product-card {
             background: #ffffff;
             border-radius: 2rem;
@@ -83,7 +77,6 @@
             align-items: center;
             padding: 2rem 1.5rem 1.8rem;
             border: 1px solid #f7e5cf;
-            backdrop-filter: blur(0px);
         }
 
         .product-card:hover {
@@ -92,35 +85,18 @@
             border-color: #e1c394;
         }
 
-        /* Icono circular profesional */
-        .icon-wrapper {
-            background: #fef1e0;
-            width: 110px;
-            height: 110px;
-            border-radius: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            transition: background 0.2s;
+        /* Estilo para el icono emoji */
+        .emoji-icon {
+            font-size: 5rem;
+            margin-bottom: 1.2rem;
+            transition: transform 0.2s ease;
+            display: inline-block;
         }
 
-        .product-card:hover .icon-wrapper {
-            background: #f7e1c1;
+        .product-card:hover .emoji-icon {
+            transform: scale(1.08);
         }
 
-        .icon-wrapper i {
-            font-size: 3.8rem;
-            color: #b56a2c;
-            transition: transform 0.2s;
-        }
-
-        .product-card:hover .icon-wrapper i {
-            transform: scale(1.05);
-            color: #9b541f;
-        }
-
-        /* Título del producto */
         .product-name {
             font-size: 1.7rem;
             font-weight: 600;
@@ -129,7 +105,6 @@
             text-align: center;
         }
 
-        /* Pequeño detalle tipo panadería */
         .product-badge {
             font-size: 0.75rem;
             background: #f3e3cf;
@@ -141,7 +116,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* Efecto sutil enlace */
         .card-footer {
             margin-top: 1rem;
             font-size: 0.85rem;
@@ -157,7 +131,6 @@
             opacity: 1;
         }
 
-        /* Responsive */
         @media (max-width: 680px) {
             body {
                 padding: 1.5rem 1rem;
@@ -171,19 +144,14 @@
             .product-card {
                 padding: 1.5rem 1rem;
             }
-            .icon-wrapper {
-                width: 85px;
-                height: 85px;
-            }
-            .icon-wrapper i {
-                font-size: 2.8rem;
+            .emoji-icon {
+                font-size: 3.8rem;
             }
             .product-name {
                 font-size: 1.4rem;
             }
         }
 
-        /* Footer sutil */
         .footer-note {
             text-align: center;
             margin-top: 3.5rem;
@@ -203,11 +171,9 @@
     </div>
 
     <div class="products-grid">
-        <!-- Pan Campesino -->
+        <!-- Pan Campesino - icono 🥖 -->
         <a href="https://loep1039.github.io/Pan_Campesino/" class="product-card" target="_blank" rel="noopener noreferrer">
-            <div class="icon-wrapper">
-                <i class="fas fa-bread-slice"></i>
-            </div>
+            <div class="emoji-icon">🥖</div>
             <div class="product-name">Pan Campesino</div>
             <div class="product-badge">Rústico • Masa madre</div>
             <div class="card-footer">
@@ -215,11 +181,9 @@
             </div>
         </a>
 
-        <!-- Pan Francés -->
+        <!-- Pan Francés - icono 🥖 -->
         <a href="https://loep1039.github.io/Pan_Frances/" class="product-card" target="_blank" rel="noopener noreferrer">
-            <div class="icon-wrapper">
-                <i class="fas fa-baguette"></i>
-            </div>
+            <div class="emoji-icon">🥖</div>
             <div class="product-name">Pan Francés</div>
             <div class="product-badge">Crujiente • Tradicional</div>
             <div class="card-footer">
@@ -227,11 +191,9 @@
             </div>
         </a>
 
-        <!-- Pan Canilla -->
+        <!-- Pan Canilla - icono 🥖 -->
         <a href="https://loep1039.github.io/Pan_Canilla/" class="product-card" target="_blank" rel="noopener noreferrer">
-            <div class="icon-wrapper">
-                <i class="fas fa-bread-loaf"></i>
-            </div>
+            <div class="emoji-icon">🥖</div>
             <div class="product-name">Pan Canilla</div>
             <div class="product-badge">Alargado • Esponjoso</div>
             <div class="card-footer">
@@ -239,11 +201,9 @@
             </div>
         </a>
 
-        <!-- Pan Pinita -->
+        <!-- Pan Pinita - icono 🥖 -->
         <a href="https://loep1039.github.io/Pan_Pinita/" class="product-card" target="_blank" rel="noopener noreferrer">
-            <div class="icon-wrapper">
-                <i class="fas fa-cookie-bite"></i>
-            </div>
+            <div class="emoji-icon">🥖</div>
             <div class="product-name">Pan Pinita</div>
             <div class="product-badge">Suave • Dulce típico</div>
             <div class="card-footer">
@@ -251,11 +211,9 @@
             </div>
         </a>
 
-        <!-- Pan Hamburguesa -->
+        <!-- Pan Hamburguesa - icono 🍔 -->
         <a href="https://loep1039.github.io/Pan_Hamburguesa/" class="product-card" target="_blank" rel="noopener noreferrer">
-            <div class="icon-wrapper">
-                <i class="fas fa-hamburger"></i>
-            </div>
+            <div class="emoji-icon">🍔</div>
             <div class="product-name">Pan Hamburguesa</div>
             <div class="product-badge">Brioche • Aterciopelado</div>
             <div class="card-footer">
@@ -263,11 +221,9 @@
             </div>
         </a>
 
-        <!-- Torta De Naranja -->
+        <!-- Torta De Naranja - icono 🎂 -->
         <a href="https://loep1039.github.io/Torta_De_Naranja/" class="product-card" target="_blank" rel="noopener noreferrer">
-            <div class="icon-wrapper">
-                <i class="fas fa-cake-candles"></i>
-            </div>
+            <div class="emoji-icon">🎂</div>
             <div class="product-name">Torta de Naranja</div>
             <div class="product-badge">Húmeda • Cítrica</div>
             <div class="card-footer">
@@ -277,7 +233,7 @@
     </div>
 
     <div class="footer-note">
-        <i class="fas fa-chart-line"></i> Sistema de gestión actualizado • Fernando Araujo
+        📊 Sistema de gestión actualizado • Fernando Araujo
     </div>
 </div>
 </body>
