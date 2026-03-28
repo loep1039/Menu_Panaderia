@@ -10,14 +10,13 @@
             --fondo: #f4f7f6;
             --texto: #2d3436;
             --blanco: #ffffff;
-            --gris-borde: #dfe6e9;
-            /* Colores de identidad por producto */
-            --color-campesino: #00965e;  /* Verde */
-            --color-frances: #2c3e50;    /* Azul Oscuro */
-            --color-canilla: #e74c3c;    /* Rojo */
-            --color-pinita: #f39c12;     /* Naranja */
-            --color-hamburguesa: #96715f; /* Café */
-            --color-torta: #8e44ad;      /* Púrpura */
+            /* Colores basados en tus capturas */
+            --color-campesino: #00965e;
+            --color-frances: #2c3e50;
+            --color-canilla: #e74c3c;
+            --color-pinita: #f39c12;
+            --color-hamburguesa: #96715f;
+            --color-torta: #8e44ad;
         }
 
         body {
@@ -26,40 +25,31 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         .app-container {
             width: 100%;
-            max-width: 450px; /* Ancho ideal para móviles */
+            max-width: 450px;
         }
 
         header {
             text-align: center;
-            padding: 30px 0;
-        }
-
-        header p { 
-            margin: 0; 
-            font-size: 0.7rem; 
-            letter-spacing: 2px; 
-            color: #636e72;
-            text-transform: uppercase;
-            font-weight: bold;
+            padding: 25px 0;
         }
 
         header h1 { 
-            margin: 5px 0; 
+            margin: 0; 
             font-size: 1.4rem; 
             color: var(--texto);
             font-weight: 800;
+            text-transform: uppercase;
         }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Dos columnas */
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
-            margin-bottom: 25px;
         }
 
         .menu-card {
@@ -70,22 +60,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: 0.2s;
             border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Borde de color sutil en la parte inferior de cada tarjeta */
-        .menu-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
         .menu-card:active {
@@ -100,88 +77,70 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 12px;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: white;
         }
 
         .menu-card span {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--texto);
-            text-align: center;
             text-transform: uppercase;
         }
 
-        /* Colores y bordes específicos */
-        .card-campesino::after { background-color: var(--color-campesino); }
-        .bg-campesino { background-color: var(--color-campesino); }
+        /* Asignación de colores a iconos */
+        .bg-campesino { background: var(--color-campesino); }
+        .bg-frances { background: var(--color-frances); }
+        .bg-canilla { background: var(--color-canilla); }
+        .bg-pinita { background: var(--color-pinita); }
+        .bg-hamburguesa { background: var(--color-hamburguesa); }
+        .bg-torta { background: var(--color-torta); }
 
-        .card-frances::after { background-color: var(--color-frances); }
-        .bg-frances { background-color: var(--color-frances); }
-
-        .card-canilla::after { background-color: var(--color-canilla); }
-        .bg-canilla { background-color: var(--color-canilla); }
-
-        .card-pinita::after { background-color: var(--color-pinita); }
-        .bg-pinita { background-color: var(--color-pinita); }
-
-        .card-hamburguesa::after { background-color: var(--color-hamburguesa); }
-        .bg-hamburguesa { background-color: var(--color-hamburguesa); }
-
-        .card-torta::after { background-color: var(--color-torta); }
-        .bg-torta { background-color: var(--color-torta); }
-
-        .footer-info {
-            text-align: center;
-            color: #b2bec3;
-            font-size: 0.7rem;
-            margin-top: 30px;
-        }
     </style>
 </head>
 <body>
 
 <div class="app-container">
     <header>
-        <p>Sistema de Gestión</p>
+        <p style="margin:0; font-size:0.6rem; font-weight:bold; color:#a0aec0; letter-spacing:1px;">GESTIÓN PANADERÍA</p>
         <h1>FERNANDO ARAUJO</h1>
     </header>
 
-    <nav class="menu-grid">
-        <a href="https://loep1039.github.io/Pan_Campesino/" class="menu-card card-campesino" target="_blank">
+    <div class="menu-grid">
+        <a href="https://loep1039.github.io/Pan_Campesino/" class="menu-card">
             <div class="icon-circle bg-campesino"><i class="fas fa-leaf"></i></div>
             <span>Campesino</span>
         </a>
 
-        <a href="https://loep1039.github.io/Pan_Frances/" class="menu-card card-frances" target="_blank">
+        <a href="https://loep1039.github.io/Pan_Frances/" class="menu-card">
             <div class="icon-circle bg-frances"><i class="fas fa-bread-slice"></i></div>
             <span>Francés</span>
         </a>
 
-        <a href="https://loep1039.github.io/Pan_Canilla/" class="menu-card card-canilla" target="_blank">
+        <a href="https://loep1039.github.io/Pan_Canilla/" class="menu-card">
             <div class="icon-circle bg-canilla"><i class="fas fa-arrows-alt-v"></i></div>
             <span>Canilla</span>
         </a>
 
-        <a href="https://loep1039.github.io/Pan_Pinita/" class="menu-card card-pinita" target="_blank">
+        <a href="https://loep1039.github.io/Pan_Pinita/" class="menu-card">
             <div class="icon-circle bg-pinita"><i class="fas fa-cookie"></i></div>
             <span>Piñita</span>
         </a>
 
-        <a href="https://loep1039.github.io/Pan_Hamburguesa/" class="menu-card card-hamburguesa" target="_blank">
+        <a href="https://loep1039.github.io/Pan_Hamburguesa/" class="menu-card">
             <div class="icon-circle bg-hamburguesa"><i class="fas fa-hamburger"></i></div>
             <span>Hamburguesa</span>
         </a>
 
-        <a href="https://loep1039.github.io/Torta_De_Naranja/" class="menu-card card-torta" target="_blank">
+        <a href="https://loep1039.github.io/Torta_De_Naranja/" class="menu-card">
             <div class="icon-circle bg-torta"><i class="fas fa-birthday-cake"></i></div>
             <span>Torta Naranja</span>
         </a>
-    </nav>
-
-    <div class="footer-info">
-        &copy; 2026 Fernando Araujo · Panadería Artesanal
     </div>
+
+    <p style="text-align:center; color:#b2bec3; font-size:0.7rem; margin-top:30px;">
+        Seleccione un producto para calcular receta
+    </p>
 </div>
 
 </body>
